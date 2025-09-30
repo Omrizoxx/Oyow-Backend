@@ -3,7 +3,7 @@ const cors = require('cors');
 const http = require('http');
 const socketIo = require('socket.io');
 const mongoose = require('mongoose');
-const connectDB = require('./config/db');
+const connectDB = require('./src/config/db');
 require('dotenv').config();
 
 const app = express();
@@ -31,9 +31,9 @@ app.use(express.json());
 connectDB();
 
 // Import Models
-const Tour = require('./models/Tour');
-const Booking = require('./models/Booking');
-const Contact = require('./models/Contact');
+const Tour = require('./src/models/Tour');
+const Booking = require('./src/models/Booking');
+const Contact = require('./src/models/Contact');
 
 // Fallback data when MongoDB is not available
 const fallbackTours = [
